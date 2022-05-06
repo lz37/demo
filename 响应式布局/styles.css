@@ -60,7 +60,7 @@ footer {
   text-align: center;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .style-logo {
     float: left;
     display: block;
@@ -72,9 +72,27 @@ footer {
   }
 
   .style-img {
-    margin-top: 3.5px;
+    margin-top: 10px;
     width:100%;
   }
+
+  #画师1-begin{
+    width: 66%;
+    float: right;
+  }
+
+  #画师2-begin{
+    width: 34%;
+  }
+
+  header{
+    height: 60px;
+  }
+
+  
+}
+
+@media screen and (min-width: 1024px) {
 
   #画师1-begin{
     width: 53%;
@@ -86,16 +104,14 @@ footer {
     width: 27%;
     margin-left: 10%;
   }
+  .style-img {
+    margin-top: 3.5px;
+  }
 
   .container {
     margin-left: 10%;
     width: 80%;
   }
-
-  header{
-    height: 60px;
-  }
-
   footer,header {
     margin-left: 10%;
     width: 80%;
