@@ -1,0 +1,24 @@
+version: '3'
+services:
+  atm-nacos:
+    image: nacos/nacos-server
+    environment:
+      MODE: 'standalone'
+  atm-mysql:
+    image: mysql:8.0.29
+    environment:
+      MYSQL_ROOT_PASSWORD: 616437
+    volumes:
+      - "$PWD/mysql/data:/var/lib/mysql"
+      - "$PWD/mysql/conf:/etc/mysql"
+  atm-nginx:
+    image: nginx
+    volumes:
+      - "$PWD/nginx/conf.d:/etc/nginx/conf.d"
+      - "$PWD/nginx/html:/usr/share/nginx/html"
+    ports:
+      - "80:80"
+  atm-gateway:
+    build: ./gateway
+  atm-account:
+    build: ./account
