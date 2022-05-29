@@ -1,0 +1,5 @@
+atm/atm-docker/mysql/conf/*
+atm/atm-docker/mysql/data/*
+!atm/atm-docker/mysql/conf/.gitkeep
+!atm/atm-docker/mysql/data/.gitkeep
+*.jar
