@@ -17,7 +17,6 @@ import com.zerozawa.exceptions.RegisterException;
 import com.zerozawa.pojo.TbAccount;
 import com.zerozawa.pojo.VPersonalInfo;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,6 +114,7 @@ public class BankService {
    * @return
    * @throws ReflectiveOperationException
    */
+  @Transactional
   public Account deposit(Long id, Double money)
     throws ReflectiveOperationException {
     TbAccount tbAccount = accountDao.selectById(id);
@@ -138,6 +138,7 @@ public class BankService {
    * @return
    * @throws ReflectiveOperationException
    */
+  @Transactional
   public Account withdraw(Long id, Double money)
     throws ReflectiveOperationException {
     TbAccount tbAccount = accountDao.selectById(id);
@@ -174,6 +175,7 @@ public class BankService {
    * @return
    * @throws ReflectiveOperationException
    */
+  @Transactional
   public Account setCeiling(Long id, Double ceiling)
     throws ReflectiveOperationException {
     TbAccount tbAccount = accountDao.selectById(id);
