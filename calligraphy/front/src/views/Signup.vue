@@ -25,6 +25,7 @@
           v-model="form.school"
           placeholder="请选择你的学校"
           size="large"
+          disabled
         >
           <el-option
             v-for="item in schools"
@@ -35,7 +36,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label=" 年 级 ">
-        <el-input v-model="form.grade" clearable />
+        <el-input v-model="form.grade" clearable disabled />
       </el-form-item>
       <el-form-item label=" 性 别 ">
         <el-radio-group v-model="form.sex">
@@ -44,7 +45,7 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item label=" 学 号 ">
-        <el-input v-model="form.id" clearable />
+        <el-input v-model="form.id" clearable disabled />
       </el-form-item>
       <el-form-item>
         <el-button color="#1d1626" dark="isDark">确定</el-button>

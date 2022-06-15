@@ -11,11 +11,16 @@
           <span>
             <h1>{{ course.name }}</h1>
           </span>
-          <el-button class="button" text>进入</el-button>
+          <el-button
+            class="button"
+            text
+            @click="this.$router.push('/course-manager/' + course.id)"
+            >进入</el-button
+          >
         </div>
       </template>
       <div>课程编号：{{ course.id }}</div>
-      <div>授课老师：{{ course.teacher }}</div>
+      <div v-if="isAdmin">授课老师：{{ course.teacher }}</div>
       <div>开课学校：{{ course.school }}</div>
       <div>开课班级：{{ course.class }}</div>
     </el-card>
@@ -24,9 +29,10 @@
 
 <script>
 export default {
-  name: "CourseComponent",
+  name: "CourseManagerComponent",
   data() {
     return {
+      isAdmin: window.localStorage.getItem("identity") == "admin",
       courses: [
         {
           id: 1123,
@@ -35,23 +41,10 @@ export default {
           school: "牛马小学",
           class: "一年级一班",
         },
-        {
-          id: 114514,
-          name: "楷书",
-          teacher: "李四",
-          school: "逆天小学",
-          class: "三年级一班",
-        },
       ],
     };
   },
 };
 </script>
 
-<style>
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
+<style></style>
